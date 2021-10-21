@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<a th:href="@{/home}">Home</a>
+<form th:action="@{/save}" method="post" th:object="${user}">
+    <div>
+        First name:
+        <input type="text" placeholder="Fist name" th:field="*{firstName}">
+        <p th:if="${#fields.hasErrors('firstName')}" th:errors="*{firstName}"></p>
+    </div>
+    <div>
+        Last name:
+        <input type="text" placeholder="Last name" th:field="*{lastName}">
+        <p th:if="${#fields.hasErrors('lastName')}" th:errors="*{lastName}"></p>
+    </div>
+    <div>
+        User name:
+        <input type="text" placeholder="User name" th:field="*{userName}">
+        <p th:if="${#fields.hasErrors('userName')}" th:errors="*{userName}"></p>
+        <p th:text="${message}"></p>
+    </div>
+    <div>
+        Password:
+        <input type="text" placeholder="Password" th:field="*{password}">
+        <p th:if="${#fields.hasErrors('password')}" th:errors="*{password}"></p>
+    </div>
+    <div>
+        Email:
+        <input type="email" placeholder="Email" th:field="*{email}">
+        <p th:if="${#fields.hasErrors('email')}" th:errors="*{email}"></p>
+    </div>
+    <div>
+        Number phone:
+        <input type="text" placeholder="Fist name" th:field="*{phone}">
+        <p th:if="${#fields.hasErrors('phone')}" th:errors="*{phone}"></p>
+    </div>
+    <button>Resgister</button>
+</form>
+</body>
+</html>

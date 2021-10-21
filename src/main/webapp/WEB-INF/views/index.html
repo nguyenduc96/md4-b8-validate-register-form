@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<a th:href="@{/create}">Register</a>
+<table>
+    <thead>
+    <tr>
+        <th>#</th>
+        <th>First name</th>
+        <th>Last name</th>
+        <th>User name</th>
+        <th>Password</th>
+        <th>Email</th>
+        <th>Number phone</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    <tr th:each="user, stat : ${users}">
+        <td th:text="${stat.count}"></td>
+        <td th:text="${user.firstName}"></td>
+        <td th:text="${user.lastName}"></td>
+        <td th:text="${user.userName}"></td>
+        <td th:text="${user.password}"></td>
+        <td th:text="${user.email}"></td>
+        <td th:text="${user.phone}"></td>
+    </tr>
+    </tbody>
+</table>
+</body>
+</html>
